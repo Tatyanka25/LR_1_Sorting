@@ -3,7 +3,7 @@
 #include <random>
 
 template <typename T>  // Объявление шаблонной функции с одним параметром - типом T
-void bubble_sort(T* arr, int size) {  
+void bubble_sort(T* arr, int size) {
 	for (size_t i = 0; i < size - 1; ++i) {  // Цикл для прохода по массиву arr
 		for (size_t j = 0; j < size - i - 1; ++j) {  // Вложенный цикл для сравнения пар элементов массива
 			if (arr[j] > arr[j + 1]) {  // Проверка, если текущий элемент больше следующего элемента
@@ -14,7 +14,7 @@ void bubble_sort(T* arr, int size) {
 }
 
 template <typename T>  // Объявление шаблонной функции с одним параметром - типом T
-void insertion_sort(T* arr, int size) {  
+void insertion_sort(T* arr, int size) {
 	for (int i = 1; i < size; ++i) {  // Цикл для прохода по элементам массива arr, начиная со второго элемента
 		T k = arr[i];  // Сохранение текущего элемента массива в переменную k
 		int j = i - 1;  // Инициализация переменной j со значением i - 1
@@ -27,7 +27,7 @@ void insertion_sort(T* arr, int size) {
 }
 
 
-int getRandom(int min, int maxx) {  
+int getRandom(int min, int maxx) {
 	static std::random_device rd;  // Создание статического объекта random_device
 	static std::mt19937 gen(rd());  // Создание статического объекта mt19937 и инициализация с использованием random_device
 	std::uniform_int_distribution<int> distribution(min, maxx);  // Создание равномерного распределения в указанном диапазоне
@@ -35,7 +35,7 @@ int getRandom(int min, int maxx) {
 }
 
 template <typename T> // Объявление шаблонной функции с одним параметром - типом T
-void quick_sort(T* arr, int min, int maxx) {  
+void quick_sort(T* arr, int min, int maxx) {
 	if (min < maxx) {  // Проверка наличия элементов для сортировки
 		int randomIndex = getRandom(min, maxx);  // Получение случайного индекса элемента для использования в качестве опорного
 		T pivot = arr[randomIndex];  // Определение опорного элемента
@@ -56,7 +56,7 @@ void quick_sort(T* arr, int min, int maxx) {
 
 
 template <typename T> // Объявление шаблонной функции с одним параметром - типом T
-void print_array(T* arr, int size) {  
+void print_array(T* arr, int size) {
 	std::cout << "Sorted array = " << "[ ";  // Вывод начала сообщения
 	for (int i = 0; i < size; i++) {  // Цикл для прохода по массиву
 		if (i != size - 1) {  // Проверка, не последний ли элемент
@@ -70,7 +70,7 @@ void print_array(T* arr, int size) {
 }
 
 template <typename T> // Объявление шаблонной функции с одним параметром - типом T
-void fill_in_the_array(T* arr, int size, std::string type) {  
+void fill_in_the_array(T* arr, int size, std::string type) {
 	std::cout << "Enter " << size << " " << type << "s: " << std::endl;  // Вывод сообщения с запросом на ввод size элементов типа type
 	for (int i = 0; i < size; ++i) {  // Цикл для ввода size элементов в массив
 		std::cin >> arr[i];  // Ввод элемента массива
@@ -99,7 +99,6 @@ int main() {  // Основная функция программы
 				std::cout << std::endl << "Mistake! Try again."; // Сообщить пользователю об ошибке и предложить попробовать снова
 				std::cout << std::endl << std::endl << "Enter the type of the elements (int, double, char, string): ";  // Вывод сообщения о выборе типа элементов
 				std::cin >> type;  // Ввод типа элементов
-				std::cout << std::endl << std::endl; // Вывод пустых строк для разделения итераций цикла
 			} while (type != "int" && type != "double" && type != "char" && type != "string"); // Пока пользователь не введет нужное слово
 		}
 
@@ -107,10 +106,9 @@ int main() {  // Основная функция программы
 		std::cin >> sort;  // Ввод выбора метода сортировки
 		if (sort != "bubble" && sort != "insertion" && sort != "quick") { // Если пользователь ввел неподходящие слова
 			do {
-				std::cout << "Mistake! Try again."; // Сообщить пользователю об ошибке и предложить попробовать снова
-				std::cout << "Enter the sorting (bubble, insertion, quick): ";  // Вывод сообщения о выборе метода сортировки
+				std::cout << std::endl << "Mistake! Try again."; // Сообщить пользователю об ошибке и предложить попробовать снова
+				std::cout << std::endl << std::endl << "Enter the sorting (bubble, insertion, quick): ";  // Вывод сообщения о выборе метода сортировки
 				std::cin >> sort;  // Ввод выбора метода сортировки
-				std::cout << std::endl << std::endl; // Вывод пустых строк для разделения итераций цикла
 			} while (sort != "bubble" && sort != "insertion" && sort != "quick"); // Пока пользователь не введет нужное слово
 		}
 
