@@ -97,7 +97,7 @@ int main() {  // Основная функция программы
 		if (type != "int" && type != "double" && type != "char" && type != "string") { // Если пользователь ввел неподходящие слова
 			do {
 				std::cout << "Mistake! Try again."; // Сообщить пользователю об ошибке и предложить попробовать снова
-				std::cout << "Enter the type of the elements (int, double, char, string): ";  // Вывод сообщения о выборе типа элементов
+				std::cout << std::endl << std::endl << "Enter the type of the elements (int, double, char, string): ";  // Вывод сообщения о выборе типа элементов
 				std::cin >> type;  // Ввод типа элементов
 				std::cout << std::endl << std::endl; // Вывод пустых строк для разделения итераций цикла
 			} while (type != "int" && type != "double" && type != "char" && type != "string"); // Пока пользователь не введет нужное слово
