@@ -120,10 +120,6 @@ int main() {  // Основная функция программы
 			if (sort == "bubble") bubble_sort(intArr, size);  // Если выбран метод пузырьковой сортировки
 			else if (sort == "insertion") insertion_sort(intArr, size);  // Если выбран метод сортировки вставками
 			else if (sort == "quick") quick_sort(intArr, 0, size - 1);  // Если выбран метод быстрой сортировки
-			else {
-				std::cout << "There is no such sorting. Try again!" << std::endl << std::endl;  // Вывод сообщения об ошибке выбора сортировки
-				continue;  // Переход на следующую итерацию цикла
-			}
 			print_array(intArr, size);  // Вывод отсортированного массива
 			delete[] intArr;  // Очистка памяти, выделенной для массива
 		}
@@ -135,10 +131,6 @@ int main() {  // Основная функция программы
 			else if (sort == "quick") {
 				quick_sort(doubleArr, 0, size - 1);
 			}
-			else {
-				std::cout << "There is no such sorting. Try again!" << std::endl << std::endl;
-				continue;
-			}
 			print_array(doubleArr, size);
 			delete[] doubleArr;
 		}
@@ -148,10 +140,6 @@ int main() {  // Основная функция программы
 			if (sort == "bubble") bubble_sort(stringArr, size);
 			else if (sort == "insertion") insertion_sort(stringArr, size);
 			else if (sort == "quick") quick_sort(stringArr, 0, size - 1);
-			else {
-				std::cout << "There is no such sorting. Try again!" << std::endl << std::endl;;
-				continue;
-			}
 			print_array(stringArr, size);
 			delete[] stringArr;
 		}
@@ -161,10 +149,6 @@ int main() {  // Основная функция программы
 			if (sort == "bubble") bubble_sort(charArr, size);
 			else if (sort == "insertion") insertion_sort(charArr, size);
 			else if (sort == "quick") quick_sort(charArr, 0, size - 1);
-			else {
-				std::cout << "There is no such sorting. Try again!" << std::endl << std::endl;
-				continue;
-			}
 			print_array(charArr, size);
 			delete[] charArr;
 		}
